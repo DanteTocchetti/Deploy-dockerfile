@@ -13,7 +13,7 @@ pipeline{
         steps{
 
             script{
-                def imageName = "mi-imagen-docker"
+                def imageName = "debianprueba1"
                 def imageTag = "latest"
                 docker.build("${imageName}:${imageTag}", "-f Dockerfile .")
             }
