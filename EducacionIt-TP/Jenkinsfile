@@ -4,19 +4,18 @@ pipeline{
     stages {
         stage('check'){
             steps{
-                git 'https://github.com/DanteTocchetti/Deploy-dockerfile'
+                git clone 'https://github.com/DanteTocchetti/Deploy-dockerfile'
             }
         }
     }
 
-    stage('Build'){
-        steps{
-
-            script{
-                def imageName = "debianprueba1"
-                def imageTag = "latest"
-                docker.build("${imageName}:${imageTag}", "-f Dockerfile .")
+        stage('Build'){
+            steps{
+                script{
+                    def imageName = "debianprueba1"
+                    def imageTag = "latest"
+                    docker.build("${imageName}:${imageTag}", "-f Dockerfile .")
+                }
             }
-        }
     }
 }
