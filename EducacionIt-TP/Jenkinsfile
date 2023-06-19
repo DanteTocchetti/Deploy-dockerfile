@@ -1,0 +1,22 @@
+pipeline{
+    agent {label 'principal'}
+
+    stages {
+        stage('check'){
+            steps{
+                git ''
+            }
+        }
+    }
+
+    stage('Build'){
+        steps{
+
+            script{
+                def imageName = "mi-imagen-docker"
+                def imageTag = "latest"
+                docker.build("${imageName}:${imageTag}", "-f Dockerfile .")
+            }
+        }
+    }
+}
