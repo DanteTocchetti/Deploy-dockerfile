@@ -18,4 +18,15 @@ pipeline{
                 }
             }
     }
+        stage('Deploy') {
+                steps {
+                    script {
+                        def imageName = "debianprueba1"
+                        def imageTag = "latest"
+                        def deploymentName = deploy"
+    
+                        sh "kubectl set image deployment/${deploymentName} my-container=${imageName}:${imageTag}"
+                    }
+                }
+            }
 }
