@@ -25,7 +25,7 @@ pipeline{
                         def imageTag = "latest"
                         def deploymentName = deploy"
     
-                        sh "kubectl set image deployment/${deploymentName} my-container=${imageName}:${imageTag}"
+                        sh "kubectl set image deployment/${deploymentName} EduIt=${imageName}:${imageTag}"
                     }
                 }
             }
