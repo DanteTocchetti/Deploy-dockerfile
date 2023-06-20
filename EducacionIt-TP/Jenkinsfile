@@ -14,7 +14,7 @@ pipeline{
                 script{
                     def imageName = "debianprueba1"
                     def imageTag = "latest"
-                    docker.build("${imageName}:${imageTag}", "-f Dockerfile .")
+                    docker.build("${imageName}:${imageTag}", "-f Deploy-dockerfile/Dockerfile .")
                 }
             }
     }
